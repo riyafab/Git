@@ -1,5 +1,5 @@
 
-# Initialize a new Git repository
+* Initialize a new Git repository
 ```bash
 git init
 ```
