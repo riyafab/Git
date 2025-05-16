@@ -85,7 +85,11 @@ git cherry-pick <commit-hash>
 ```
 
 - Add remote origin using a Personal Access Token (PAT)
+```bash
 git remote add origin https://<your-username>:<your-PAT>@github.com/<your-username>/90DaysOfDevOps.git
+```
 
 - Update existing remote origin URL
+```bash
 git remote set-url origin https://<your-username>:<your-PAT>@github.com/<your-username>/90DaysOfDevOps.git
+```
