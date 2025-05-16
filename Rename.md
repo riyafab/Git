@@ -1,6 +1,8 @@
 
 # Initialize a new Git repository
+```bash
 git init
+```
 
 # Add files to staging area
 git add .
