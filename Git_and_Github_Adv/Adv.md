@@ -79,7 +79,6 @@ git reset --hard HEAD~1  # Deletes the latest commit and resets working director
                  Removes the stash from the stash list after applying.
                  Use when you're done with the stash and don't need it again.
                  Riskier if there's a conflict — stash could be lost.   
-<<<<<<< HEAD
 
 ## git cherry-pick
 
