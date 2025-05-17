@@ -1,3 +1,4 @@
+# Git & GitHub Basic Commands
 
 - Initialize a new Git repository
 ```bash
@@ -93,9 +94,7 @@ git remote add origin https://<your-username>:<your-PAT>@github.com/<your-userna
 ```bash
 git remote set-url origin https://<your-username>:<your-PAT>@github.com/<your-username>/90DaysOfDevOps.git
 ```
-
 - Create an SSH key pair:
 ```bash
 ssh-keygen
 ```
-
