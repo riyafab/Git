@@ -22,13 +22,16 @@
    ```bash
    git revert HEAD
 
-- git reset
-What it does:
+## git reset 
+
+- What it does:
+
 Moves the HEAD (and optionally the current branch pointer) to a previous commit.
 
 Can change your working directory, staging area (index), or both, depending on the option used.
 
-When to use:
+- When to use:
+
 Local undo of commits before pushing.
 
 Rewriting history when you want a clean commit history (e.g., squashing, removing bad commits).
@@ -41,13 +44,16 @@ git reset --hard HEAD~1  # Deletes the latest commit and resets working director
 ```
 ⚠️ Avoid using reset on public/shared branches—it rewrites history
 
-🔄 git revert
-What it does:
+## git revert
+
+- What it does:
+- 
 Creates a new commit that undoes the changes from a previous commit.
 
 Safe for shared/public branches because it preserves history.
 
-When to use:
+- When to use:
+- 
 Undo a commit that has already been pushed to a shared repo.
 
 Need a non-destructive way to reverse changes
