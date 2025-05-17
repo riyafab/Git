@@ -96,20 +96,20 @@ git reset --hard HEAD~1  # Deletes the latest commit and resets working director
    git cherry-pick --continue
    ```
 
-1) How Cherry-Picking is Used in Bug Fixes
+## How Cherry-Picking is Used in Bug Fixes
 Cherry-picking allows you to apply a specific commit (or set of commits) from one branch to another — usually without merging the entire branch.
 
 In bug fixing, it’s commonly used to:Backport fixes from the main branch to older release branches.
                                      Apply urgent fixes from a feature or hotfix branch to production without waiting for full integration.
 
 
-⚠️ 2) Risks of Cherry-Picking
-Duplicate commits: The same changes may exist in multiple branches with different hashes, making history harder to follow.
+## Risks of Cherry-Picking
+- Duplicate commits: The same changes may exist in multiple branches with different hashes, making history harder to follow.
 
-Merge conflicts: Applying a commit out of its original context can lead to conflicts, especially if dependencies have changed.
+- Merge conflicts: Applying a commit out of its original context can lead to conflicts, especially if dependencies have changed.
 
-Loss of context: The cherry-picked commit might rely on earlier commits not included, leading to bugs or inconsistent behavior.
+- Loss of context: The cherry-picked commit might rely on earlier commits not included, leading to bugs or inconsistent behavior.
 
-History confusion: Repeated cherry-picks across branches can clutter logs and make it harder to trace changes.
-=======
->>>>>>> f7cddd2f6be8adc7df61af627e3f3e5bdf759efb
+- History confusion: Repeated cherry-picks across branches can clutter logs and make it harder to trace changes.
+
+
