@@ -48,3 +48,19 @@ git reset --hard HEAD~1  # Deletes the latest commit and resets working director
 
 - When to use: Undo a commit that has already been pushed to a shared repo.
                Need a non-destructive way to reverse changes
+
+## git stash
+
+1. Modify a file without committing.  
+   ```bash
+   echo "Temporary Change" >> temp.txt
+   git add temp.txt
+   ```  
+2. Stash the changes.  
+   ```bash
+   git stash
+   ```  
+3. Switch to another branch and apply the stash.  
+   ```bash
+   git checkout main
+   git stash pop
