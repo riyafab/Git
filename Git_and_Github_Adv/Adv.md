@@ -64,3 +64,18 @@ git reset --hard HEAD~1  # Deletes the latest commit and resets working director
    ```bash
    git checkout main
    git stash pop
+
+- When to Use: git stash when you want to temporarily save your uncommitted changes (modified or staged files) without committing them, so you can work on something else (like switching branches or pulling latest code).
+
+
+## git stash apply vs git stash pop
+
+- git stash apply: Reapplies stashed changes to your working directory.
+                   Does NOT remove the stash from the stash list.
+                   Useful when you want to reuse or keep the stash for later.
+                   Safer if you're unsure or want a backup.
+
+- git stash pop: Reapplies stashed changes to your working directory.
+                 Removes the stash from the stash list after applying.
+                 Use when you're done with the stash and don't need it again.
+                 Riskier if there's a conflict — stash could be lost.   
