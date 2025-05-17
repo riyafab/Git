@@ -6,7 +6,10 @@
 5. Rebasing – Maintaining a clean history.  
 6. Branching Strategies – Industry best practices.  
 
-1.Soft Reset (keeps changes staged).  
+
+## Commands
+
+1. Soft Reset (keeps changes staged).  
    ```bash
    git reset --soft HEAD~1
    ```  
@@ -24,17 +27,11 @@
 
 ## git reset 
 
-- What it does:
+- What it does:Moves the HEAD (and optionally the current branch pointer) to a previous commit.
+               Can change your working directory, staging area (index), or both, depending on the option used.
 
-Moves the HEAD (and optionally the current branch pointer) to a previous commit.
-
-Can change your working directory, staging area (index), or both, depending on the option used.
-
-- When to use:
-
-Local undo of commits before pushing.
-
-Rewriting history when you want a clean commit history (e.g., squashing, removing bad commits).
+- When to use:Local undo of commits before pushing.
+              Rewriting history when you want a clean commit history (e.g., squashing, removing bad commits).
 
 Unstaging files (git reset <file>).
 
@@ -46,14 +43,8 @@ git reset --hard HEAD~1  # Deletes the latest commit and resets working director
 
 ## git revert
 
-- What it does:
-- 
-Creates a new commit that undoes the changes from a previous commit.
+- What it does:Creates a new commit that undoes the changes from a previous commit.
+               Safe for shared/public branches because it preserves history.
 
-Safe for shared/public branches because it preserves history.
-
-- When to use:
-- 
-Undo a commit that has already been pushed to a shared repo.
-
-Need a non-destructive way to reverse changes
+- When to use: Undo a commit that has already been pushed to a shared repo.
+               Need a non-destructive way to reverse changes
