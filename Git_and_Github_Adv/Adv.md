@@ -79,6 +79,7 @@ git reset --hard HEAD~1  # Deletes the latest commit and resets working director
                  Removes the stash from the stash list after applying.
                  Use when you're done with the stash and don't need it again.
                  Riskier if there's a conflict — stash could be lost.   
+<<<<<<< HEAD
 
 ## git cherry-pick
 
@@ -110,3 +111,5 @@ Merge conflicts: Applying a commit out of its original context can lead to confl
 Loss of context: The cherry-picked commit might rely on earlier commits not included, leading to bugs or inconsistent behavior.
 
 History confusion: Repeated cherry-picks across branches can clutter logs and make it harder to trace changes.
+=======
+>>>>>>> f7cddd2f6be8adc7df61af627e3f3e5bdf759efb
