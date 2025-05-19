@@ -111,4 +111,130 @@ In bug fixing, it’s commonly used to:Backport fixes from the main branch to ol
 
 - History confusion: Repeated cherry-picks across branches can clutter logs and make it harder to trace changes.
 
+## git rebase
+ 1. Fetch the latest changes.  
+   ```bash
+   git fetch origin main
+   ```  
+2. Rebase the feature branch onto main.  
+   ```bash
+   git rebase origin/main
+   ```  
+3. Resolve conflicts and continue.  
+   ```bash
+   git rebase --continue
+
+## git merge vs git rebase:
+
+- git merge: Combines two branches with a merge commit
+             Does not change existing commit history
+             Keeps a non-linear (branching) history
+             Safe for shared/public branches
+             Easier for teams to collaborate without rewriting history
+             History can become cluttered with many merge commits
+
+- git rebase: Moves your branch’s commits on top of another branch
+              Rewrites history (changes commit hashes)
+              Creates a linear, clean commit history
+              Ideal for local or personal branches before merging
+              Should not be used on shared branches after pushing
+              Can simplify git log and git blame
+
+## Best practices for rebasing
+
+- Never rebase shared/public branches: Only rebase local/private branches to avoid breaking others' history.
+
+- Create a backup branch before rebasing: Use git branch backup/your-branch as a safety net.
+
+- Use interactive rebase (git rebase -i): To squash, reword, or drop commits for a cleaner history.
+
+- Handle conflicts carefully: Fix files, run git add, then continue with git rebase --continue.
+
+- Squash small or WIP commits: Combine multiple commits into one logical unit to simplify the history.
+
+- Rebase onto latest main before merging: Keeps your branch up-to-date and avoids unnecessary merge commits.
+
+- Use git log and git reflog for recovery: Use git reflog to recover lost commits if something goes wrong.
+
+🚫 Avoid rebasing after pushing to remote
+– Unless you’re the only one working on that branch.
+
+# Branching Strategies Used in Companies
+
+| Workflow            | Best For                        | Branches Used                                           | Key Benefit                         |
+| ------------------- | ------------------------------- | ------------------------------------------------------- | ----------------------------------- |
+| **Git Flow**        | Structured, versioned releases  | `main`, `develop`, `feature/*`, `release/*`, `hotfix/*` | Organized release process           |
+| **GitHub Flow**     | Fast-moving teams, CI/CD        | `main`, `feature/*`                                     | Simplicity + continuous delivery    |
+| **Trunk-Based Dev** | High-speed CI/CD & DevOps teams | `main` (or `trunk`), short-lived branches               | Frequent integration, fast releases |
+
+
+# Which strategy is best for DevOps and CI/CD.
+
+ ## Trunk-Based Development
+- Fast integration: Developers push small, frequent changes directly to the main branch or short-lived branches.
+
+- Simple branching: Minimal branches (usually just main or trunk), avoiding complex merges and delays.
+
+- Enables automation: Works perfectly with CI/CD pipelines for build, test, and deployment.
+
+- Supports feature flags: Incomplete features can be hidden from users while code is still deployed.
+
+- Reduces merge conflicts: Frequent integration means fewer long-lived branches and fewer conflicts.
+
+
+# Pros and cons of different workflows.
+
+## Git Flow
+✅ Pros
+- Clear separation of concerns (features, releases, hotfixes)
+
+- Good for large teams and structured release cycles
+
+- Supports multiple versions in parallel (e.g., hotfix for v1 while developing v2)
+
+❌ Cons
+- Complex branching model (develop, feature, release, hotfix)
+
+- Slower integration and deployment
+
+- Not ideal for CI/CD or fast iteration
+
+- - Merge conflicts are more likely due to long-lived branches
+
+## GitHub Flow
+✅ Pros
+- Simple and lightweight
+
+- Encourages continuous delivery and deployment
+
+- Integrates well with pull requests and automated testing
+
+- Good for small-to-medium teams or startups
+
+❌ Cons
+- No formal release or hotfix process
+
+- Lacks structure for long-running development
+
+- Assumes main is always stable and deployable, which requires discipline
+
+## Trunk-Based Development
+✅ Pros
+- Fast integration, ideal for DevOps and CI/CD
+
+- Encourages frequent, small commits
+
+- Reduces merge conflicts by avoiding long-lived branches
+
+- Easier to automate and maintain
+
+❌ Cons
+- Requires mature tooling (feature flags, test automation)
+
+- Developers need discipline and solid test coverage
+
+- Not ideal for teams unfamiliar with continuous delivery practices
+  
+
+
 
